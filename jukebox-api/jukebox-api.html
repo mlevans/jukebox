@@ -1,0 +1,30 @@
+<head>
+  <title>Jukebox</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Jukebox</h1>
+    </header>
+    <ul>
+      {{#momentum plugin='fades'}}
+	      {{#each requests_images}}
+	        {{> request_image}}
+	      {{/each}}
+      {{/momentum}}
+      {{#each current_song}}
+    	 {{> current_so}}
+ 	    {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="request_image">
+  <div>@{{screen_name}}</div>
+  <div><img style="border-radius:128px" src="{{profile_image}}"/></div>
+  <div>just requested {{spotify_artist}}'s {{spotify_song}}</div>
+  <div><img style="" src="{{spotify_art}}"/></div>
+</template>
+<template name="current_so">
+  <div>Currently Playing {{name}}</div>
+</template>

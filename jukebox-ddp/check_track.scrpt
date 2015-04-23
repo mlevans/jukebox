@@ -1,0 +1,9 @@
+local currentTrack, pos, dur, sta
+tell application "Spotify"
+	set currentTrack to name of current track as string
+	set pos to player position as string
+	set dur to duration of current track as string
+	set sta to player state as string
+end tell
+
+return "{\"sta\":" & "\"" & sta & "\"," & "\"ct\":" & "\"" & currentTrack & "\"}"
